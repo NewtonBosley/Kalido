@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3vh;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav a#accueil {
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.autres {
+  display: flex;
+  align-items: stretch;
+}
+
+.kalido {
+  display: flex;
+  align-items: stretch;
+}
+
+nav a:hover {
+  background-color: #111111;
+}
