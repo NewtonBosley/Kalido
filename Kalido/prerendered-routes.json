@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/accueil": {},
+    "/contact": {},
+    "/le-groupe": {},
+    "/spectacles": {}
+  }
+}
