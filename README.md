@@ -36,6 +36,10 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## GitHub Pages
+
+The site is deployed automatically to GitHub Pages whenever changes are pushed to `main`. In the repository settings, open **Pages** and set the build and deployment source to **GitHub Actions**. The workflow builds the static site into `dist/Kalido/browser` and publishes that folder.
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
