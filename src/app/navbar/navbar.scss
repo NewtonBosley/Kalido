@@ -2,7 +2,12 @@
   display: block;
   width: 100%;
 }
-
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 4rem;
+  z-index: 10;
+}
 nav {
   display: flex;
   align-items: stretch;
@@ -19,7 +24,7 @@ nav a {
   color: white;
   font-size: 3vh;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1rem;
   text-decoration: none;
 }
 
@@ -33,6 +38,10 @@ nav a#accueil {
   align-items: stretch;
 }
 
+.menu-container {
+  display: contents;
+}
+
 .kalido {
   display: flex;
   align-items: stretch;
@@ -40,4 +49,63 @@ nav a#accueil {
 
 nav a:hover {
   background-color: #111111;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  nav {
+    position: relative;
+    align-items: center;
+  }
+
+  .menu-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.35rem;
+    width: 3.5rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+    border-radius: 0.1rem;
+    background-color: white;
+  }
+
+  .autres {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 10rem;
+    background-color: #333333;
+  }
+
+  .autres.menu-ouvert {
+    display: flex;
+  }
+
+  .autres a {
+    justify-content: flex-start;
+  }
 }

@@ -1,10 +1,23 @@
-<nav>
+<nav class="navbar">
     <div class="kalido">
         <a id="accueil" routerLink="/accueil">Kalido</a>
     </div>
-    <div class="autres">
-        <a class="nav" routerLink="/le-groupe">Le groupe</a>
-        <a class="nav" routerLink="/spectacles">Spectacles</a>
-        <a class="nav" routerLink="/contact">Contact</a>
+    <div class="menu-container">
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-controls="liens-navigation"
+            [attr.aria-expanded]="menuOuvert"
+            (click)="basculerMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div id="liens-navigation" class="autres" [class.menu-ouvert]="menuOuvert">
+            <a class="nav" routerLink="/le-groupe" (click)="fermerMenu()">Le groupe</a>
+            <a class="nav" routerLink="/spectacles" (click)="fermerMenu()">Spectacles</a>
+            <a class="nav" routerLink="/contact" (click)="fermerMenu()">Contact</a>
+        </div>
     </div>
 </nav>

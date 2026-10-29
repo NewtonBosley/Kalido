@@ -31,4 +31,37 @@ describe('Navbar', () => {
       '/contact',
     ]);
   });
+
+  it('should toggle the small-screen menu and close it after selecting a link', () => {
+    const button: HTMLButtonElement = fixture.nativeElement.querySelector('.menu-toggle');
+    const linksContainer: HTMLElement = fixture.nativeElement.querySelector('#liens-navigation');
+
+    button.click();
+    fixture.detectChanges();
+
+    expect(button.getAttribute('aria-expanded')).toBe('true');
+    expect(linksContainer.classList.contains('menu-ouvert')).toBe(true);
+
+    document.body.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    fixture.detectChanges();
+
+    expect(button.getAttribute('aria-expanded')).toBe('false');
+    expect(linksContainer.classList.contains('menu-ouvert')).toBe(false);
+
+    button.click();
+    fixture.detectChanges();
+
+    expect(button.getAttribute('aria-expanded')).toBe('true');
+    expect(linksContainer.classList.contains('menu-ouvert')).toBe(true);
+
+    button.click();
+    fixture.detectChanges();
+
+    expect(button.getAttribute('aria-expanded')).toBe('false');
+    expect(linksContainer.classList.contains('menu-ouvert')).toBe(false);
+
+    component.menuOuvert = true;
+    component.fermerMenu();
+    expect(component.menuOuvert).toBe(false);
+  });
 });
